@@ -1,7 +1,7 @@
+var mouseDown = false;
 addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
-	var mouseDown = false;
 	canvas.addEventListener("mousedown", function() { mouseDown = true });
 	canvas.addEventListener("mouseup", function() { mouseDown = false });
 	context.strokeStyle = "black";
