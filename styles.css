@@ -1,0 +1,10 @@
+canvas#draw {
+	bottom: 70px;
+	left: 17.5px;
+	position: absolute;
+	height: calc(100vh - 162.5px);
+	border-radius: 10px;
+	border: 1px solid lightgray;
+	box-shadow: inset 0px 4px 6px #0003;
+	width: calc(100vw - 35px);
+}
