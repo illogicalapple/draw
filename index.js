@@ -1,9 +1,8 @@
-var mouseDown = false;
 addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
-	var x, y;
-	document.addEventListener("mousedown", function() { mouseDown = true });
+	var x, y, mouseDown;
+	document.addEventListener("mousedown", function(event) { [x, y, mouseDown] = [event.clientX - 17.5, event.clientY - 92.5, true] });
 	document.addEventListener("mouseup", function() { mouseDown = false });
 	canvas.width = canvas.getBoundingClientRect().width;
 	canvas.height = canvas.getBoundingClientRect().height;
