@@ -2,6 +2,7 @@ var mouseDown = false;
 addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
+	var x, y;
 	canvas.addEventListener("mousedown", function() { mouseDown = true });
 	canvas.addEventListener("mouseup", function() { mouseDown = false });
 	canvas.width = canvas.getBoundingClientRect().width;
@@ -16,7 +17,9 @@ addEventListener("load", function() {
 	canvas.addEventListener("mousemove", function(event) {
 		if(mouseDown) {
 			context.beginPath();
-			context.lineTo(event.clientX - 17.5, event.clientY - 92.5);
+			context.moveTo(x, y);
+			[x, y] = [event.clientX - 17.5, event.clientY - 92.5];
+			context.lineTo(x, y);
 			context.stroke();
 		}
 	});
