@@ -1,10 +1,16 @@
 canvas#draw {
-	top: 92.5px;
+	top: 17.5px;
 	left: 17.5px;
 	position: absolute;
-	height: calc(100vh - 162.5px);
+	height: calc(100% - 87.5px);
 	border-radius: 10px;
 	border: 1px solid lightgray;
 	box-shadow: inset 0px 4px 6px #0003;
-	width: calc(100vw - 35px);
+	width: calc(100% - 35px);
+}
+main {
+	position: absolute;
+	top: 75px;
+	height: calc(100vh - 75px);
+	width: 100vw;
 }
