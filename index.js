@@ -38,7 +38,7 @@ addEventListener("load", function() {
 				if(mouseDown) {
 					context.beginPath();
 					context.moveTo(x, y);
-					[x, y] = element;
+					[x, y] = destroy(element);
 					context.lineTo(x, y);
 					context.stroke();
 				} else {
