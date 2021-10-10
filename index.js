@@ -27,6 +27,8 @@ addEventListener("load", function() {
 		context.lineWidth = 5;
 		mouseDown = false;
 		canvas.width += 0; //clear
+		canvas.width = canvas.getBoundingClientRect().width;
+		canvas.height = canvas.getBoundingClientRect().height;
 		for(let element of drawing) {
 			if(element === DOWN) {
 				mouseDown = true;
