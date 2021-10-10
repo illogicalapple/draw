@@ -36,7 +36,7 @@ addEventListener("load", function() {
 					context.beginPath();
 					context.strokeStyle = "black";
 					context.lineCap = "round";
-					context.lineWidth = 10;
+					context.lineWidth = 5;
 					context.moveTo(x, y);
 					[x, y] = destroy(element);
 					context.lineTo(x, y);
