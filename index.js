@@ -21,7 +21,7 @@ addEventListener("load", function() {
 			drawing.push([x, y]);
 		}
 	};
-	redraw = function redraw() {
+	redraw = function redraw(destroy) {
 		context.strokeStyle = "black";
 		context.lineCap = "round";
 		context.lineWidth = 5;
@@ -40,7 +40,7 @@ addEventListener("load", function() {
 					context.lineTo(x, y);
 					context.stroke();
 				} else {
-					[x, y] = element;
+					[x, y] = destroy(element);
 				}
 			}
 		}
