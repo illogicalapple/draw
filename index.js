@@ -24,7 +24,7 @@ addEventListener("load", function() {
 	redraw = function redraw(destroy) {
 		context.strokeStyle = "black";
 		context.lineCap = "round";
-		context.lineWidth = 5;
+		context.lineWidth = 10;
 		mouseDown = false;
 		canvas.width += 0; //clear
 		canvas.width = canvas.getBoundingClientRect().width;
