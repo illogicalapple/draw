@@ -11,7 +11,7 @@ addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
 	var x, y, mouseDown;
-	function mouseDownEvent(event) { [x, y, mouseDown] = [event.clientX - 17.5, event.clientY - 92.5, true]; drawing.push([x, y]); drawing.push(DOWN); };
+	function mouseDownEvent(event) { [x, y, mouseDown] = [event.clientX - 17.5, event.clientY - 92.5, true]; drawing.push([x, y]); drawing.push(DOWN); drawing.push([x, y]); };
 	function mouseUpEvent() { mouseDown = false; drawing.push(UP); };
 	function mouseMoveEvent(event) {
 		if(mouseDown) {
