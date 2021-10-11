@@ -4,7 +4,7 @@ const UP = "UP";
 var redraw;
 var functions = {
 	normal: e => e,
-	sine: (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a])
+	sine: (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a]
 };
 addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
