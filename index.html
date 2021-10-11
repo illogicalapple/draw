@@ -56,8 +56,8 @@
 				});
 				document.querySelector(".menu").addEventListener("click", function() {
 					document.querySelector(".menu-popup").classList.toggle("is-open");
-					document.querySelector("div.menu-popup.is-open ~ img.menu").src = "close.svg";
-					document.querySelector("div.menu-popup:not(.is-open) ~ img.menu").src = "menu.svg";
+					(document.querySelector("div.menu-popup.is-open ~ img.menu") ?? {}).src = "close.svg";
+					(document.querySelector("div.menu-popup:not(.is-open) ~ img.menu") ?? {}).src = "menu.svg";
 				});
 			</script>
 		</main>
