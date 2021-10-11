@@ -14,3 +14,7 @@ main {
 	height: calc(100vh - 75px);
 	width: 100vw;
 }
+div.is-open {
+	box-shadow: -8px 0px 8px #0002;
+	transform: translateX(0px) !important;
+}
