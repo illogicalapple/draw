@@ -6,6 +6,7 @@ var functions = {
 	normal: e => e,
 	sine: (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a]
 };
+var interval;
 addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
@@ -63,5 +64,15 @@ addEventListener("load", function() {
 		canvas.width = canvas.getBoundingClientRect().width;
 		canvas.height = canvas.getBoundingClientRect().height;
 		drawing = [];
+	});
+	document.querySelector("button.destroy").addEventListener("click", function() {
+		if(!interval) {
+			setInterval(() => interval = redraw(functions.sine, 0.01, 20), 33);
+			this.innerText = "Undestroy it!";
+		} else {
+			clearInterval(interval);
+			interval = false;
+			this.innerText = "Destroy it!";
+		}
 	});
 });
