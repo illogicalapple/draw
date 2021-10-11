@@ -67,7 +67,7 @@ addEventListener("load", function() {
 	});
 	document.querySelector("button.destroy").addEventListener("click", function() {
 		if(!interval) {
-			setInterval(() => interval = redraw(functions.sine, 0.01, 20), 33);
+			interval = setInterval(() => redraw(functions.sine, 0.01, 20), 33);
 			this.innerText = "Undestroy it!";
 		} else {
 			clearInterval(interval);
