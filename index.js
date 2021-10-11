@@ -2,6 +2,10 @@ var drawing = [];
 const DOWN = "DOWN";
 const UP = "UP";
 var redraw;
+var functions = {
+	normal: e => e,
+	sine: (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a])
+};
 addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
@@ -21,7 +25,7 @@ addEventListener("load", function() {
 			drawing.push([x, y]);
 		}
 	};
-	redraw = function redraw(destroy) {
+	redraw = function redraw(destroy, ...args) {
 		mouseDown = false;
 		canvas.width += 0; //clear
 		canvas.width = canvas.getBoundingClientRect().width;
@@ -42,7 +46,7 @@ addEventListener("load", function() {
 					context.lineTo(x, y);
 					context.stroke();
 				} else {
-					[x, y] = destroy(element);
+					[x, y] = destroy(element, ...args);
 				}
 			}
 		}
