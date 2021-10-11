@@ -18,3 +18,9 @@ div.is-open {
 	box-shadow: -8px 0px 8px #0002;
 	transform: translateX(0px) !important;
 }
+div.is-open ~ img.menu {
+	top: 40px !important;
+	right: 40px !important;
+	height: 35px !important;
+	bottom: auto !important;
+}
