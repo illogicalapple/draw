@@ -51,9 +51,9 @@ addEventListener("load", function() {
 			}
 		}
 	}
-	document.addEventListener("mousedown", mouseDownEvent);
+	canvas.addEventListener("mousedown", mouseDownEvent);
 	document.addEventListener("mouseup", mouseUpEvent);
-	document.addEventListener("touchstart", mouseDownEvent);
+	canvas.addEventListener("touchstart", mouseDownEvent);
 	document.addEventListener("touchend", mouseUpEvent);
 	document.addEventListener("mousemove", mouseMoveEvent);
 	document.addEventListener("touchmove", mouseMoveEvent);
