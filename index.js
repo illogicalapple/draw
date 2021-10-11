@@ -71,6 +71,7 @@ addEventListener("load", function() {
 			this.innerText = "Undestroy it!";
 		} else {
 			clearInterval(interval);
+			redraw(functions.normal);
 			interval = false;
 			this.innerText = "Destroy it!";
 		}
