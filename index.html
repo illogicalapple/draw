@@ -43,15 +43,22 @@
 		</nav>
 		<main id="content">
 			<canvas id="draw"></canvas>
+			<div style="position: absolute; right: 0px; width: min(100vw, 500px); height: 100%; background-color: white; transition: 0.3s; transform: translateX(100%);" class="menu-popup">
+				<h1 class="red" style="text-align: center; padding: 40px 0px;">Menu</h1>
+			</div>
 			<img src="/moon.svg" alt="Toggle dark mode" style="position: absolute; bottom: 0px; left: 0px; filter: invert(1); height: 70px;" class="darkModeToggle">
-			<img src="play.svg" alt="Toggle dark mode" style="position: absolute; bottom: 0px; right: 0px; filter: invert(1); height: 70px;" class="play">
+			<img src="menu.svg" alt="Menu" style="position: absolute; bottom: 0px; right: 0px; filter: invert(1); height: 70px;" class="menu">
 			<script>
 				document.querySelector("img.darkModeToggle").addEventListener("click", function() {
 					this.setAttribute("src", (this.getAttribute("src") === "/moon.svg") ? "/sun.svg" : "/moon.svg");
 					document.body.toggleAttribute("data-dark-mode");
 					localStorage.darkMode = String(document.body.hasAttribute("data-dark-mode"));
 				});
-				document.querySelector(".play").addEventListener("click", () => setInterval(() => redraw(e=>[e[0]+Math.sin(Date.now()/100+e[1])*20, e[1]+Math.sin(Date.now()/100+e[0])*20]), 33));
+				document.querySelector(".menu").addEventListener("click", function() {
+					document.querySelector(".menu-popup").classList.toggle("is-open");
+					document.querySelector("div.menu-popup.is-open ~ img.menu").src = "close.svg";
+					document.querySelector("div.menu-popup:not(.is-open) ~ img.menu").src = "menu.svg";
+				});
 			</script>
 		</main>
 	</body>
