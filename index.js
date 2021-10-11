@@ -43,7 +43,7 @@ addEventListener("load", function() {
 					context.lineCap = "round";
 					context.lineWidth = 5;
 					context.moveTo(x, y);
-					[x, y] = destroy(element);
+					[x, y] = destroy(element, ...args);
 					context.lineTo(x, y);
 					context.stroke();
 				} else {
