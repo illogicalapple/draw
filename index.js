@@ -11,7 +11,21 @@ addEventListener("load", function() {
 	const canvas = document.querySelector("canvas#draw");
 	const context = canvas.getContext("2d");
 	var x, y, mouseDown;
-	function mouseDownEvent(event) { [x, y, mouseDown] = [event.clientX - 17.5, event.clientY - 92.5, true]; drawing.push([x, y]); drawing.push(DOWN); drawing.push([x, y]); };
+	function getX(event) {
+		if(event instanceof TouchEvent) {
+			return event.touches[0].clientX;
+		} else {
+			return event.clientX;
+		}
+	}
+	function getY(event) {
+		if(event instanceof TouchEvent) {
+			return event.touches[0].clientY;
+		} else {
+			return event.clientY;
+		}
+	}
+	function mouseDownEvent(event) { [x, y, mouseDown] = [getX(event) - 17.5, getY(event) - 92.5, true]; drawing.push([x, y]); drawing.push(DOWN); drawing.push([x, y]); };
 	function mouseUpEvent() { mouseDown = false; drawing.push(UP); };
 	function mouseMoveEvent(event) {
 		if(mouseDown) {
@@ -20,7 +34,7 @@ addEventListener("load", function() {
 			context.lineWidth = 5;
 			context.beginPath();
 			context.moveTo(x, y);
-			[x, y] = [event.clientX - 17.5, event.clientY - 92.5];
+			[x, y] = [getX(event) - 17.5, getY(event) - 92.5];
 			context.lineTo(x, y);
 			context.stroke();
 			drawing.push([x, y]);
